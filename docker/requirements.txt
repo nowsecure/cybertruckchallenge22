@@ -1,8 +1,8 @@
 pyOpenSSL==22.0.0
 r2pipe==1.6.5
 yara-python-dex==1.0.3
-frida==15.1.22
-frida-tools==10.6.1
+frida==15.1.23
+frida-tools==10.6.2
 frida-dexdump==2.0.1
 objection==1.11.0
 pyaxmlparser==0.3.26
