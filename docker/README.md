@@ -3,12 +3,39 @@
 The workshop requires to build two Docker images: `tools` and `emulator`
 
 
-## Docker: tools
+## Docker: emulator
+
+An Android 11 OS image with root privileges will be downloaded:
 
 #### Build
 
 ```sh
-make
+make build-emu
+```
+
+#### Run
+
+```sh
+make shell-emu
+```
+
+Run these commands inside the Docker emulator container:
+
+```sh
+sdkmanager --list
+avdmanager create avd -n first_avd --abi google_apis/x86_64 -k "system-images;android-30;google_apis;x86_64"
+emulator -avd first_avd -no-window -no-audio &
+adb devices
+```
+
+## Docker: tools
+
+Once you have running the emulator on Docker, then run this image and verify you can connect to the Android emulator via ADB.
+
+#### Build
+
+```sh
+make build
 ```
 
 #### Run
@@ -17,22 +44,11 @@ make
 make shell
 ```
 
-## Docker: emulator
-
-An Android 11 OS image with root privileges will be downloaded:
-
-#### Build
-
+Successful setup will look like this output:
 ```sh
-docker pull androidsdk/android-30
-```
-
-#### Run
-
-```sh
-docker run -it --rm --network host --device /dev/kvm androidsdk/android-30:latest bash
-sdkmanager --list
-avdmanager create avd -n first_avd --abi google_apis/x86_64 -k "system-images;android-30;google_apis;x86_64"
-emulator -avd first_avd -no-window -no-audio &
-adb devices
+$ make shell
+docker run --network host -v /tmp:/tmp -it --entrypoint bash cbtruck
+root@xps:/opt/cbtruck# adb devices
+List of devices attached
+emulator-5554	device
 ```
