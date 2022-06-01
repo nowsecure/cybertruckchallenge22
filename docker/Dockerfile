@@ -1,12 +1,12 @@
 FROM ubuntu:22.04
 
 LABEL org.opencontainers.image.authors="enovella@nowsecure.com"
-ENV REFRESHED_AT 2022-05-22
+ENV REFRESHED_AT 2022-06-01
 
 ENV VER_APKTOOL  "2.6.1"
-ENV VER_JADX     "1.4.0"
-ENV VER_FRIDA    "15.1.22"
-ENV COMMIT_R2    "dd947f1aa5551d4bc59bd7c283f86d286a9d1597"
+ENV VER_JADX     "1.4.1"
+ENV VER_FRIDA    "15.1.23"
+ENV COMMIT_R2    "53c5e8618aa6bab5965357543b659d10158ceb68"
 ENV COMMIT_APKID "d979ffa26dea8d39814a817ae34b608532cb4443"
 
 # Package requirements
@@ -16,8 +16,8 @@ RUN mkdir -p /usr/share/man/man1 /usr/share/man/man1
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN dpkg --add-architecture amd64 && \
-  apt-get update && apt-get upgrade -y && \
-  apt-get install -qq -y --no-install-recommends \
+  apt update && apt upgrade -y && \
+  apt install -qq -y --no-install-recommends \
   jq \
   curl \
   wget \

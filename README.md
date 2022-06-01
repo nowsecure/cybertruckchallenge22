@@ -1,6 +1,6 @@
 # CyberTruckChallenge22
 
-Android security workshop taught at the CyberTruck Challenge 2022 (Detroit USA). Further info at https://www.cybertruckchallenge.org
+Android security workshop taught at the CyberTruck Challenge 2022 (Michigan USA). Further info at https://www.cybertruckchallenge.org
 
 ## Description
 
@@ -54,7 +54,7 @@ Eduardo Novella <enovella@nowsecure.com>
 
 ### Public Write-ups
 
-- [verso.se](https://www.verso.re/posts/cybertruck/) (by [Joan Calabrés](https://twitter.com/jcalabres22))
+- [verso.se](https://www.revers0.xyz/posts/cybertruck) (by [Joan Calabrés](https://twitter.com/jcalabres22))
 - [bugbountywriteup](https://medium.com/bugbountywriteup/cybertruck-challenge-2019-android-ctf-e39c7f796530) (by [Harshit Maheshwari](https://twitter.com/fake_batman_))
 - [GitHub](https://github.com/user1342/CyberTruck-2019-Android-CTF-Writeup) (By [James Stevenson](https://twitter.com/_JamesStevenson))
 - [GitHub.io](https://nibarius.github.io/learning-frida/2020/08/17/cybertruckchallange19) (by [Nibarius](https://github.com/nibarius))
