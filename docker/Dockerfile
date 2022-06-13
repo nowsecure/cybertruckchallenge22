@@ -1,12 +1,12 @@
 FROM ubuntu:22.04
 
 LABEL org.opencontainers.image.authors="enovella@nowsecure.com"
-ENV REFRESHED_AT 2022-06-01
+ENV REFRESHED_AT 2022-06-13
 
 ENV VER_APKTOOL  "2.6.1"
 ENV VER_JADX     "1.4.1"
-ENV VER_FRIDA    "15.1.23"
-ENV COMMIT_R2    "53c5e8618aa6bab5965357543b659d10158ceb68"
+ENV VER_FRIDA    "15.1.24"
+ENV COMMIT_R2    "e45c08acbff838eef559e2177a37266ad79e5c46"
 ENV COMMIT_APKID "d979ffa26dea8d39814a817ae34b608532cb4443"
 
 # Package requirements
@@ -84,6 +84,17 @@ RUN git clone https://github.com/rednaga/APKiD.git && \
     python3 prep-release.py && \
     python3 setup.py install && \
     cd .. && rm -rf APKiD
+
+# Frida binaries
+RUN mkdir -p /opt/cbtruck/frida
+ADD https://github.com/frida/frida/releases/download/${VER_FRIDA}/frida-server-${VER_FRIDA}-android-x86.xz \
+    /opt/cbtruck/frida/frida-server-${VER_FRIDA}-android-x86.xz
+ADD https://github.com/frida/frida/releases/download/${VER_FRIDA}/frida-server-${VER_FRIDA}-android-x86_64.xz \
+    /opt/cbtruck/frida/frida-server-${VER_FRIDA}-android-x86_64.xz
+ADD https://github.com/frida/frida/releases/download/${VER_FRIDA}/frida-server-${VER_FRIDA}-android-arm64.xz \
+    /opt/cbtruck/frida/frida-server-${VER_FRIDA}-android-arm64.xz
+# Only unpack the one used in our emulator
+RUN unxz /opt/cbtruck/frida/frida-server-${VER_FRIDA}-android-x86_64.xz
 
 # Add our specific binaries to path
 RUN chmod 700 /opt/cbtruck/*
