@@ -18,5 +18,5 @@ shell run:
 	docker run --network host -v /tmp:/tmp -it --entrypoint bash $(DOCKER_IMG)
 
 shell-emu:
-	docker run -it --rm --network host --device /dev/kvm androidsdk/android-30:latest bash
+	docker run -it --rm  -v /tmp:/tmp --network host --device /dev/kvm androidsdk/android-30:latest bash
 
