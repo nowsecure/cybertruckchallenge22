@@ -194,21 +194,19 @@ function hookExports(libtarget) {
                   console.log("[ro.data strings]");
                   const p = base.add(0x850);
                   hd(p,64);
-
                   //  Android x64 emulator
                   //  0x000007bd      31d1           xor ecx, edx
                   //  0x000007bf      4088ce         mov sil, cl
                   //  0x000007c2      48634598       movsxd rax, dword [var_68h]
                   //  0x000007c6      488bbd78ffff.  mov rdi, qword [var_88h]
                   //  0x000007cd      40883407       mov byte [rdi + rax], sil
-
                   const xor = 0x7bd;
                   Interceptor.attach(base.add(xor), function () {
                     // console.log(JSON.stringify(this.context));
                     var x = this.context.rcx;
                     var y = this.context.rdx;
                     var z = x ^ y;
-                    console.log(`[CH3] [sK]: ecx^edx: (${String.fromCharCode(x)}) [dK]:${x}^${y} -> ${String.fromCharCode(z)}`);
+                    console.log(`[CH3] [sK]: rcx^rdx: (${String.fromCharCode(x)}) [dK]:${x}^${y} -> ${String.fromCharCode(z)}`);
                   });
 
               }
