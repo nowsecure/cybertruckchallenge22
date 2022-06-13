@@ -87,12 +87,13 @@ RUN git clone https://github.com/rednaga/APKiD.git && \
 
 # Frida binaries
 RUN mkdir -p /opt/cbtruck/frida
-ADD https://github.com/frida/frida/releases/download/${VER_FRIDA}/frida-server-${VER_FRIDA}-android-x86.xz \
-    /opt/cbtruck/frida/frida-server-${VER_FRIDA}-android-x86.xz
+# ADD https://github.com/frida/frida/releases/download/${VER_FRIDA}/frida-server-${VER_FRIDA}-android-x86.xz \
+#     /opt/cbtruck/frida/frida-server-${VER_FRIDA}-android-x86.xz
 ADD https://github.com/frida/frida/releases/download/${VER_FRIDA}/frida-server-${VER_FRIDA}-android-x86_64.xz \
     /opt/cbtruck/frida/frida-server-${VER_FRIDA}-android-x86_64.xz
-ADD https://github.com/frida/frida/releases/download/${VER_FRIDA}/frida-server-${VER_FRIDA}-android-arm64.xz \
-    /opt/cbtruck/frida/frida-server-${VER_FRIDA}-android-arm64.xz
+# ADD https://github.com/frida/frida/releases/download/${VER_FRIDA}/frida-server-${VER_FRIDA}-android-arm64.xz \
+#     /opt/cbtruck/frida/frida-server-${VER_FRIDA}-android-arm64.xz
+
 # Only unpack the one used in our emulator
 RUN unxz /opt/cbtruck/frida/frida-server-${VER_FRIDA}-android-x86_64.xz
 
