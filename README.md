@@ -59,3 +59,4 @@ Eduardo Novella <enovella@nowsecure.com>
 - [GitHub](https://github.com/user1342/CyberTruck-2019-Android-CTF-Writeup) (By [James Stevenson](https://twitter.com/_JamesStevenson))
 - [GitHub.io](https://nibarius.github.io/learning-frida/2020/08/17/cybertruckchallange19) (by [Nibarius](https://github.com/nibarius))
 - [GitHub.io (native layer)](https://nibarius.github.io/learning-frida/2020/08/22/cybertruckchallange19-revisited) (by [Nibarius](https://github.com/nibarius))
+- [alp.run](https://alp.run/2021/02/09/cybertruckchallenge19_writeup.html) (by [Alp Eren](https://twitter.com/isik_erenalp))
