@@ -13,10 +13,22 @@ An Android 11 OS image with root privileges will be downloaded:
 make build-emu
 ```
 
+Build in CyberTruck network:
+
+```sh
+make build-emu-local
+```
+
 #### Run
 
 ```sh
 make shell-emu
+```
+
+Run in CyberTruck network:
+
+```sh
+make shell-emu-local
 ```
 
 Run these commands inside the Docker emulator container:
@@ -38,10 +50,22 @@ Once you have running the emulator on Docker, then run this image and verify you
 make build
 ```
 
+Build in CyberTruck network:
+
+```sh
+make build-local
+```
+
 #### Run
 
 ```sh
 make shell
+```
+
+Run in CyberTruck network:
+
+```sh
+make shell-local
 ```
 
 Successful setup will look like this output:
